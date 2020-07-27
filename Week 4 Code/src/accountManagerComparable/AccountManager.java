@@ -19,6 +19,7 @@ public class AccountManager {
         
        
 		
+		
 		List<BankAccount> bankAccounts = new LinkedList<>();  ////PPT3 Array List to store all Bank Account Objects
 		
 		BankAccount bankAccount1 = new BankAccount();
@@ -27,7 +28,7 @@ public class AccountManager {
 		List<String> addresses = List.of("124 Mulberry St.", "109 Cherry St.");
 		bankAccount1.setAddresses(addresses);
 		bankAccount1.mapAdd(bankAccount1.getOwnerName(), bankAccount1.getAddresses());
-		bankAccount1.setBalance(1000);
+		bankAccount1.setBalance(2000);
 		
 		BankAccount bankAccount2 = new BankAccount();
 		bankAccounts.add(bankAccount2);
@@ -35,7 +36,7 @@ public class AccountManager {
 		List<String> addresses2 = List.of("125 Mulberry St.", "110 Cherry St.");
 		bankAccount2.setAddresses(addresses2);
 		bankAccount2.mapAdd(bankAccount2.getOwnerName(), bankAccount2.getAddresses());
-		bankAccount2.setBalance(2000);
+		bankAccount2.setBalance(1000);
 		
 		BankAccount bankAccount3 = new BankAccount();
 		bankAccounts.add(bankAccount3);
@@ -65,12 +66,24 @@ public class AccountManager {
 		
 		//using comparable interface to sort account by most money first
 		
-		
-		
+		//forward order
+		BankAccount.order = 1;
+		System.out.println("Decending order: ");
+		System.out.println("");
 		Collections.sort(bankAccounts);
 		System.out.println("after sorting by most money first using comparable interface:");
 		for (int i = 0; i < bankAccounts.size(); i++) {
 			bankAccounts.get(i).getBalance(); //also prints
+		}
+		
+		//reverse order
+		BankAccount.order = -1;
+		System.out.println("Ascending order: ");
+		System.out.println("");
+		Collections.sort(bankAccounts);
+		System.out.println("after sorting by least money first using comparable interface:");
+		for (int i = 0; i < bankAccounts.size(); i++) {
+			bankAccounts.get(i).getBalance();
 		}
 
 		

@@ -10,7 +10,7 @@ import com.techouts.sorting.Movie;
 
 public class BankAccount  implements Comparable<BankAccount>{    // PPT  Abstract classes can have implement and non implement methods. Children must implement non implemented methods.
 	
-	
+	public static int order = 1;
 	private String ownerName = "Tom";   // Initialize the Bank Account super class
 	private String gender = "Male"; //PPT 1  Set to private to encapsulate getters and setters
 	private int age = 40;
@@ -63,13 +63,13 @@ public class BankAccount  implements Comparable<BankAccount>{    // PPT  Abstrac
 		balance) { this.balance = balance; 
 	}
 	
-	@Override
+	//@Override
 	public int compareTo(BankAccount b) {
 		// sorting according to descending year
 		if (this.balance < b.balance) {// this object year is less than movie object year
-			return 1;
+			return 1 * order;
 		} else if (this.balance > b.balance) { // this object year is greater than movie object year
-			return -1;
+			return -1 * order;
 		}
 
 			return 0; // both are equal
