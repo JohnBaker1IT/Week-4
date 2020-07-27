@@ -6,7 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class BankAccount extends Customers{    // PPT  Abstract classes can have implement and non implement methods. Children must implement non implemented methods.
+import com.techouts.sorting.Movie;
+
+public class BankAccount  implements Comparable<BankAccount>{    // PPT  Abstract classes can have implement and non implement methods. Children must implement non implemented methods.
 	
 	
 	private String ownerName = "Tom";   // Initialize the Bank Account super class
@@ -44,19 +46,33 @@ public class BankAccount extends Customers{    // PPT  Abstract classes can have
 	}
 
 	public void mapAdd(String name, List<String> addresses) {
-		ownerAddresses.put(name, addresses);
+		//ownerAddresses.put(name, addresses);
 	}
 	
 	
 	
 	
 	
-	double getBalance() { 
+	public double getBalance() { 
 		NumberFormat defaultFormat =
 		NumberFormat.getCurrencyInstance(); String msg = ownerName +  ": " + 
 		defaultFormat.format(balance) + " balance";
-		System.out.println(msg); return balance; } public void setBalance(double
+		System.out.println(msg); return balance; 
+		} 
+	public void setBalance(double
 		balance) { this.balance = balance; 
+	}
+	
+	@Override
+	public int compareTo(BankAccount b) {
+		// sorting according to descending year
+		if (this.balance < b.balance) {// this object year is less than movie object year
+			return 1;
+		} else if (this.balance > b.balance) { // this object year is greater than movie object year
+			return -1;
+		}
+
+			return 0; // both are equal
 	}
 
 	
