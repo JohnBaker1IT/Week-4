@@ -76,7 +76,7 @@ public class AccountManager {
 			bankAccounts.get(i).getBalance(); //also prints
 		}
 		
-		//reverse order
+		//reverse order//
 		BankAccount.order = -1;
 		System.out.println("Ascending order: ");
 		System.out.println("");
