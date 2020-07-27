@@ -70,7 +70,7 @@ public class AccountManager {
 		Collections.sort(bankAccounts);
 		System.out.println("after sorting by most money first using comparable interface:");
 		for (int i = 0; i < bankAccounts.size(); i++) {
-			bankAccounts.get(i).getBalance();
+			bankAccounts.get(i).getBalance(); //also prints
 		}
 
 		
