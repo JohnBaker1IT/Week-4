@@ -1,4 +1,4 @@
-package p2accountManagerModel;
+package accountManagerModelComparable;
 
 import java.util.HashMap;
 import java.util.List;

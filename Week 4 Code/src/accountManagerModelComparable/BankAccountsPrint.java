@@ -1,8 +1,9 @@
-package p2accountManagerModel;
+package accountManagerModelComparable;
 
 import java.util.List;
 import java.util.ListIterator;
-import p2accountManagerModel.Customers;
+
+import accountManagerModelComparable.Customers;
 public class BankAccountsPrint {
 	
 	public int getBankAccounts (List<BankAccount>bankAccounts) {

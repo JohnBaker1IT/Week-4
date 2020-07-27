@@ -1,4 +1,4 @@
-package p2accountManagerModel;
+package accountManagerModelComparable;
 
 import java.text.NumberFormat;
 import java.util.HashMap;

@@ -1,13 +1,12 @@
-package p2accountManager;
+package accountManagerComparable;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
-import p2accountManagerModel.BankAccount;
-import p2accountManagerModel.BankAccountsPrint;
-
+import accountManagerModelComparable.BankAccount;
+import accountManagerModelComparable.BankAccountsPrint;
 
 import java.text.NumberFormat;
 
