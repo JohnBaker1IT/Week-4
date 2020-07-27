@@ -9,7 +9,6 @@ import java.util.ListIterator;
 
 import com.techouts.sorting.Movie;
 
-
 import accountManagerModelComparable.BankAccount;
 import accountManagerModelComparable.BankAccountsPrint;
 
@@ -36,7 +35,7 @@ public class AccountManager {
 		
 		BankAccount bankAccount2 = new BankAccount();
 		bankAccounts.add(bankAccount2);
-		bankAccount2.setOwnerName("Jim");
+		bankAccount2.setOwnerName("Charlie");
 		List<String> addresses2 = List.of("125 Mulberry St.", "110 Cherry St.");
 		bankAccount2.setAddresses(addresses2);
 		bankAccount2.mapAdd(bankAccount2.getOwnerName(), bankAccount2.getAddresses());
@@ -44,14 +43,20 @@ public class AccountManager {
 		
 		BankAccount bankAccount3 = new BankAccount();
 		bankAccounts.add(bankAccount3);
-		bankAccount3.setOwnerName("Mary");
+		bankAccount3.setOwnerName("Brittany");
 		List<String> addresses3 = List.of("126 Mulberry St.", "111 Cherry St.");//
 		bankAccount3.setAddresses(addresses3);
 		bankAccount3.mapAdd(bankAccount3.getOwnerName(), bankAccount3.getAddresses());
 		bankAccount3.setBalance(3000);
 		
-		BankAccount targetBalance = new BankAccount();
-		targetBalance.setBalance(1500);
+		BankAccount bankAccount4 = new BankAccount();
+		bankAccounts.add(bankAccount4);
+		bankAccount4.setOwnerName("Amber");
+		List<String> addresses4 = List.of("127 Mulberry St.", "112 Cherry St.");//
+		bankAccount4.setAddresses(addresses3);
+		bankAccount4.mapAdd(bankAccount3.getOwnerName(), bankAccount3.getAddresses());
+		bankAccount4.setBalance(4000);
+		
 
 		
 		
@@ -103,6 +108,13 @@ public class AccountManager {
 			System.out.println(bankAccounts.get(i).getBalance());
 		}
 		
+		//sorting accounts by name
+		System.out.println("Sorting by names:");
+		NamesCompare nameCompare= new NamesCompare();
+		Collections.sort(bankAccounts,nameCompare);
+		for (int i = 0; i < bankAccounts.size(); i++) {
+			System.out.println(bankAccounts.get(i).getOwnerName());
+		}
 		
 	}
 
@@ -118,6 +130,16 @@ class BalanceCompare implements Comparator<BankAccount> {
 			return -1;
 		}
 		return 0;
+	}
+
+}
+
+class NamesCompare implements Comparator<BankAccount> {
+
+	@Override
+	public int compare(BankAccount b1, BankAccount b2) {
+
+		return b1.getOwnerName().compareTo(b2.getOwnerName());
 	}
 
 }
