@@ -2,9 +2,13 @@ package accountManagerComparable;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+
+import com.techouts.sorting.Movie;
+
 
 import accountManagerModelComparable.BankAccount;
 import accountManagerModelComparable.BankAccountsPrint;
@@ -46,6 +50,11 @@ public class AccountManager {
 		bankAccount3.mapAdd(bankAccount3.getOwnerName(), bankAccount3.getAddresses());
 		bankAccount3.setBalance(3000);
 		
+		BankAccount targetBalance = new BankAccount();
+		targetBalance.setBalance(1500);
+
+		
+		
 		 System.out.println(bankAccount1);
 	        
 	     BankAccountsPrint bankAccountsPrint = new BankAccountsPrint();
@@ -86,10 +95,29 @@ public class AccountManager {
 			bankAccounts.get(i).getBalance();
 		}
 
+		//using comparator
+		Comparator<BankAccount> balanceCompare = new BalanceCompare();
+		Collections.sort(bankAccounts, balanceCompare);
+
+		for (int i = 0; i < bankAccounts.size(); i++) {
+			System.out.println(bankAccounts.get(i).getBalance());
+		}
 		
 		
-		
-		
+	}
+
+}
+
+class BalanceCompare implements Comparator<BankAccount> {
+
+	@Override
+	public int compare(BankAccount b1, BankAccount b2) {
+		if (b1.getBalance() < b2.getBalance()) {
+			return 1;
+		} else if (b1.getBalance() > b2.getBalance()) {
+			return -1;
+		}
+		return 0;
 	}
 
 }
