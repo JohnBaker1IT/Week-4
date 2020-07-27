@@ -18,7 +18,7 @@ public class AccountManager {
         
        
 		
-		List<BankAccount> bankAccounts = new LinkedList<>();  //PPT3 Array List to store all Bank Account Objects
+		List<BankAccount> bankAccounts = new LinkedList<>();  ////PPT3 Array List to store all Bank Account Objects
 		
 		BankAccount bankAccount1 = new BankAccount();
 		bankAccounts.add(bankAccount1);
