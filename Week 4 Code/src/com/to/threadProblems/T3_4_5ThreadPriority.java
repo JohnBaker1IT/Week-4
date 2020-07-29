@@ -1,6 +1,6 @@
 package com.to.threadProblems;
 
-public class T345ThreadPriority {
+public class T3_4_5ThreadPriority {
 
 	public static void main(String[] args) throws InterruptedException {
 		//print information about the current thread 

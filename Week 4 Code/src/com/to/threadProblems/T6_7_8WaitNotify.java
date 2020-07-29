@@ -1,7 +1,7 @@
 package com.to.threadProblems;
 
 
-public class T6WaitNotify {
+public class T6_7_8WaitNotify {
     
     public static void main(String[] args) {
         ThreadB a = new ThreadB();
