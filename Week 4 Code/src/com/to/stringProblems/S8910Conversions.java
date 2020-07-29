@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class S8Conversions {
+public class S8910Conversions {
 
 	public static void main(String[] args) throws ParseException {
 		//double value
