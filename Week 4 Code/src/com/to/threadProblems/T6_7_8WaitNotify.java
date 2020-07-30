@@ -39,7 +39,7 @@ class ThreadB extends Thread{
                 total += i;
             }
             notify();
-            notifyAll();
+            notifyAll();  //
         }
     }
 }
