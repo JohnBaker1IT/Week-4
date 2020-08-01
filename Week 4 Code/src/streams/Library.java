@@ -16,13 +16,20 @@ public class Library {
 		 * book.getAuthor().startsWith("J"); //it only adds authors beginning with J
 		 * }).forEach(System.out::println);
 		 */
+        //regular stream
         books.stream().filter(book -> {
             return book.getAuthor().startsWith("J");
         }).filter(book -> {
             return book.getTitle().startsWith("E"); //more eager than the previous example
         }).forEach(System.out::println);  //because it also checks titles beginning with e      
     
-        
+      //parallel stream - uses more cores and improves performance
+        books.parallelStream().filter(book -> {
+            return book.getAuthor().startsWith("J");
+        }).filter(book -> {
+            return book.getTitle().startsWith("E"); //more eager than the previous example
+        }).forEach(System.out::println);  //because it also checks titles beginning with e      
+    
     }
 
     static ArrayList<Book> populateLibrary() {
