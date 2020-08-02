@@ -15,7 +15,7 @@ public class GreetingMain {
 		GreetingMessage gm = new GreetingMessage() {
             @Override
             public void greet(String name) {
-                System.out.println("Hello " + name);
+                System.out.println("Hello " + name); //
             }
         };
         
